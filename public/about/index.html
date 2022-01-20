@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title> About </title>
+<meta name="description" content=" About Gerrie Diaz, a good human ">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://127.0.0.1:1111/design.css">
+<link rel="shortcut icon" href="http://127.0.0.1:1111/favicon.png">
+</head>
+
+<body id="page-about">
+<div class="top">
+  <a href="/" class="site-name">Gerrie Diaz</a>
+  <div class="hamburger" id="toggle">
+    <span class="bun-top"></span>
+    <span class="meat"></span>
+    <span class="bun-bottom"></span>
+  </div><!--/hamburger-->
+  <div id="overlay">
+    <nav>
+      <ul>
+        <li id="nav-home"><a href="/">Home</a></li>
+        <li id="nav-about"><a href="http://127.0.0.1:1111/about/">About</a></li>
+        <li id="nav-work"><a href="http://127.0.0.1:1111/work/">Work</a></li>
+        <li id="nav-contact"><a href="http://127.0.0.1:1111/contact/">Contact</a></li>
+      </ul>
+    </nav>
+  </div><!--/overlay-->
+</div><!--/top-bar-->
+<div class="container">
+  
+<article><h1>About <span>Gerrie Diaz</span></h1>
+<p><img src="/images/IMG_1375.jpeg" alt="example image" title="Barceloneta with W Hotel in the background." /></p>
+<p>I love to build technology that connects people and positively impacts society. My interests include: Product Management, Design, Sports, Pschology, and Accessibility.</p>
+<h2>Curiosity</h2>
+<p>I am intrigued by how humans (and animals) think and how complex systems can be decomposed into simpler parts. Complexity exists all around us and I tend to dig at least one level deeper, usually via claryfing questions, in order to make well-informed decisions - especially Type 1 Decisions (see "Jeff Bezos: There are two types of decisions to make, and don't confuse them.")</p>
+<h2>Collaboration</h2>
+<p>I love to riff on ideas with others in order to surface different perspectives (see "Diverge then Converge"). I am a firm believer that without diversity, teams can succumb to groupthink rather quickly.
+<p>Not many things in this world can be done in isolation. If you are a one-person shop, a rockstar engineer, AND a stellar designer, you still need to collaborate with your customers!</p>
+<h2>Iteration</h2>
+<p>Nothing is truly "perfect." In the world of sofware, it behooves us not to seek perfect but to build & deliver frequently in order to maintain constant feedback loops. I love to operate as lean as possible so we don't end up with the Tree Swing Cartoon.</p></article>
+
+</div><!--/container-->
+<footer><a href="https://codespace.co"><img src="http://127.0.0.1:1111/images/fake-svg.png"/></a></footer>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script>
+  $('#toggle').click(function() {
+   $(this).toggleClass('active');
+   $('#overlay').toggleClass('open');
+  });
+</script>
+<script src="/livereload.js?port=1024&amp;mindelay=10"></script></body>
+
+</html>

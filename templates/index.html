@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>{% block page_title %}Gerrie Diaz{% endblock %}</title>
+<meta name="description" content="{% block page_description %}Gerrie Diaz{% endblock %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ get_url(path="design.css") | safe }}">
+<link rel="shortcut icon" href="{{ get_url(path="favicon.png") | safe }}">
+</head>
+
+<body id="page-{% block page_id %}home{% endblock %}">
+<div class="top">
+  <a href="/" class="site-name">Gerrie Diaz</a>
+  <div class="hamburger" id="toggle">
+    <span class="bun-top"></span>
+    <span class="meat"></span>
+    <span class="bun-bottom"></span>
+  </div><!--/hamburger-->
+  <div id="overlay">
+    <nav>
+      <ul>
+        <li id="nav-home"><a href="/">Home</a></li>
+        <li id="nav-about"><a href="{{ get_url(path="@/about.md") | safe }}">About</a></li>
+        <li id="nav-work"><a href="{{ get_url(path="@/work.md") | safe }}">Work</a></li>
+        <li id="nav-contact"><a href="{{ get_url(path="@/contact.md") | safe }}">Contact</a></li>
+      </ul>
+    </nav>
+  </div><!--/overlay-->
+</div><!--/top-bar-->
+<div class="container">
+  {% block content %}
+    <h1>Gerrie Diaz <span>A Good Human</span></h1>
+    <!--Show all blog posts from content/blog/-->
+    {% set blog = get_section(path="blog/_index.md") %}
+    {% for page in blog.pages %}
+      <article>
+        <h2>
+          <a href="{{ page.permalink | safe }}">
+            {{ page.title }}
+          </a>
+        </h2>
+        <h3>{{page.date}} - {{page.category}}</h3>
+        <p>{{ page.description }}&hellip;</p>
+        <a href="{{ page.permalink | safe }}" class="more">Read original article</a>
+      </article>
+    {% endfor %}
+
+  {% endblock content %}
+</div><!--/container-->
+<footer><a href="https://codespace.co"><img src="{{ get_url(path="images/fake-svg.png") | safe }}"/></a></footer>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script>
+  $('#toggle').click(function() {
+   $(this).toggleClass('active');
+   $('#overlay').toggleClass('open');
+  });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,466 @@
+/*=========================================================================
+    CSS RESET
+=========================================================================*/
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+/*=========================================================================
+    VARIABLES
+=========================================================================*/
+
+$color-CTA:           rgba(000,122,255,1.00);
+$color-gray-100:      rgba(000,016,036,1.00);
+$color-gray-90:       rgba(000,016,036,0.90);
+$color-gray-60:       rgba(000,016,036,0.60);
+$color-gray-40:       rgba(000,016,036,0.40);
+$color-gray-18:       rgba(000,016,036,0.18);
+$color-gray-4:        rgba(000,016,036,0.04);
+
+/*=========================================================================
+    MAIN LAYOUT
+=========================================================================*/
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: $color-gray-60;
+  font-size: 1.1rem;
+}
+
+.container{
+  max-width: 36em;
+  margin: 6rem auto;
+  padding: 0 2rem;
+}
+
+article{
+  margin-bottom: 6rem;
+  position: relative;
+
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -3rem;
+    height: 1px;
+    width: 4rem;
+    background: $color-gray-18;
+  }
+}
+
+footer{
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*=========================================================================
+    TOP-NAV
+=========================================================================*/
+
+.top{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5rem;
+  z-index: 50;
+  background: rgba(255,255,255,0.90);
+}
+
+.site-name{
+  height: 1.75rem;
+  line-height: 1.75rem;
+  display: block;
+  position: fixed;
+  top: 1.5rem;
+  left: 1.75rem;
+  font-weight: bold;
+  color: $color-gray-100;
+}
+
+.hamburger{
+  display: none;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  right: 0.75rem;
+}
+
+ul {
+  display: block;
+
+  li {
+    display: inline-block;
+    position: relative;
+
+    a {
+      display: block;
+      height: 5rem;
+      line-height: 5rem;
+      padding: 0 1rem;
+      font-weight: bold;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+#page-home #nav-home,
+#page-about #nav-about,
+#page-work #nav-work,
+#page-contact #nav-contact,
+{text-decoration: underline;color: $color-gray-100}
+
+
+/*=========================================================================
+    TYPOGRAPHY & ARTICLE ELEMENTS
+=========================================================================*/
+h1, h2, h3, h4{
+  color: $color-gray-100;
+  font-weight: bold;
+  line-height: 1.1em;
+}
+
+h1{
+  font-size: 4rem;
+  margin-bottom: 6rem;
+  position: relative;
+
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -3rem;
+    height: 1px;
+    width: 4rem;
+    background: $color-gray-18;
+  }
+
+  span{
+    color: $color-gray-18;
+    display: block;
+  }
+}
+
+h2{
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+h3{
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h4{
+  margin-bottom: 0.56rem;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+
+  &.more{
+    display: inline-block;
+    color: $color-CTA;
+    position: relative;
+
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      right: -12px;
+      top: 5px;
+      width: 6px;
+      height: 10px;
+      background-image: url(images/arrow-right.svg);
+      background-size: 6px 10px;
+    }
+  }
+
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+article{
+
+  p{
+    line-height: 1.6em;
+    margin-bottom: 1.5em;
+
+    a{
+      text-decoration: none;
+      color: $color-CTA;
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+
+  b, strong{
+    font-weight: bold;
+  }
+
+  i, em{
+    font-style: italic;
+  }
+
+  img{
+    max-width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  blockquote{
+    padding: 1rem 0 1rem 2rem;
+    margin-bottom: 1.5em;
+    border-left: 0.5rem solid $color-gray-18;
+
+    p{
+      font-family: 'Garamond', serif;
+      font-style: italic;
+      font-size: 1.5rem;
+      line-height: 1.3em;
+      color: $color-gray-100;
+
+      &:last-of-type{
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  ul{
+    margin-bottom: 1.5rem;
+    list-style: disc inside;
+
+    li{
+      line-height: 1.6em;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  ol{
+    margin-bottom: 1.5rem;
+    list-style: decimal inside;
+
+    li{
+      line-height: 1.6em;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  dl{
+    margin-bottom: 1.5rem;
+
+    dd, dt{
+      @extend p;
+      margin-bottom: 0;
+    }
+
+    dt{
+      font-weight: bold;
+    }
+
+    dd{
+      font-style: italic;
+    }
+  }
+
+  hr{
+    border: none;
+    height: 1px;
+    background: $color-gray-18;
+    margin-bottom: 1.5rem;
+  }
+
+  table{
+    width: 100%;
+    text-align: left;
+    margin-bottom: 1.5rem;
+
+    tr{
+      border-bottom: 1px solid $color-gray-18;
+    }
+
+    th{
+      padding-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    td{
+      padding: 1rem 0;
+    }
+  }
+
+  p code{
+    background: $color-gray-18;
+    font-size: 1rem;
+    font-family: 'Courier', monospace;
+    padding: 0 0.2rem;
+    margin: 0 0.2rem;
+  }
+
+  pre{
+    background: $color-gray-4;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    white-space: pre-wrap;
+
+    *{
+      font-family: 'Courier', monospace;
+      font-size: 1rem;
+      font-weight: normal;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+/*=========================================================================
+    RESPONSIVE STUFF
+=========================================================================*/
+
+// Switching to the hamburger menu on smaller screens
+@media (max-width: 56rem) {
+  .top{
+
+    .hamburger{
+      display: block;
+      position: fixed;
+      top: 0rem;
+      right: 0rem;
+      height: 5rem;
+      width: 5rem;
+      cursor: pointer;
+      z-index: 200;
+
+      &.active {
+        .bun-top {
+          transform: translateY(9px) translateX(0) rotate(45deg);
+          background: #fff;
+        }
+        .meat {
+          opacity: 0;
+          background: #fff;
+        }
+
+        .bun-bottom {
+          transform: translateY(-9px) translateX(0) rotate(-45deg);
+          background: #fff;
+        }
+      }
+
+      span {
+        background: $color-gray-40;
+        border: none;
+        height: 2px;
+        width: 1.75rem;
+        position: absolute;
+        top: 1.75rem;
+        right: 1.75rem;
+        transition: all .35s ease;
+        border-radius: 3px;
+        cursor: pointer;
+
+        &:nth-of-type(2) {
+          top: 37px;
+        }
+
+        &:nth-of-type(3) {
+          top: 46px;
+        }
+      }
+    }
+
+    nav {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    ul {
+      display: block;
+
+      li {
+        display: block;
+        position: relative;
+        opacity: 0;
+        margin: 0;
+
+        a {
+          display: block;
+          position: relative;
+          color: #fff;
+          font-size: 2rem;
+          padding: 2rem;
+          text-decoration: none;
+          overflow: hidden;
+
+          &:hover{
+            background: $color-gray-60;
+          }
+        }
+      }
+    }
+
+    #overlay {
+      position: fixed;
+      z-index: 100;
+      background: $color-gray-90;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 0;
+      opacity: 0;
+      border-radius: 0 0 100% 100%;
+      visibility: hidden;
+      transition: all .4s;
+      overflow: hidden;
+
+      &.open {
+        opacity: 1;
+        visibility: visible;
+        height: 100%;
+        border-radius: 0;
+
+        li {
+          animation: fadeInTop .3s ease forwards;
+          animation-delay: .2s;
+
+          &:nth-of-type(2) {
+            animation-delay: .2s;
+          }
+          &:nth-of-type(3) {
+            animation-delay: .25s;
+          }
+          &:nth-of-type(4) {
+            animation-delay: .30s;
+          }
+        }
+      }
+    }
+
+    @keyframes fadeInTop {
+      0% {
+        opacity: 0;
+        top: -4rem;
+      }
+      100% {
+        opacity: 1;
+        top: 0;
+      }
+    }
+  }
+}
