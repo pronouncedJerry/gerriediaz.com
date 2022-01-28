@@ -3,6 +3,7 @@
 {% block page_title %} {{ page.title }} {% endblock title %}
 {% block page_description %} {{ page.description }} {% endblock title %}
 {% block page_id %}page-blog{% endblock %}
+{% block page_category %}{{ page.extra.category }}{% endblock %}
 
 {% block content %}
 <article>{{ page.content | safe }}</article>

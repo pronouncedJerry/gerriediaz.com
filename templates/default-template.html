@@ -1,8 +1,8 @@
 {% extends "index.html" %}
 
 {% block page_title %} {{ page.title }} {% endblock title %}
-{% block page_description %} {{ page.description }} {% endblock description %}
-{% block page_id %}{{ page.extra.page_id }}{% endblock page_id %}
+{% block page_description %} {{ page.description }} {% endblock %}
+{% block page_id %}{{ page.extra.page_id }}{% endblock %}
 
 {% block content %}
 <article>{{ page.content | safe }}</article>
